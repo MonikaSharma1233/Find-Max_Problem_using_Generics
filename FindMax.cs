@@ -24,7 +24,22 @@ namespace FindMaximumNumber
             }
             throw new Exception("FirstNumber,SecondNumber,ThirdNumber are Same");
         }
-
+        public static double Find_max_float(double fvalue, double svalue, double tvalue)
+        {
+            if (fvalue.CompareTo(svalue) > 0 && fvalue.CompareTo(tvalue) > 0)
+            {
+                return fvalue;
+            }
+            if (svalue.CompareTo(fvalue) > 0 && svalue.CompareTo(tvalue) > 0)
+            {
+                return svalue;
+            }
+            else if (tvalue.CompareTo(fvalue) > 0 && tvalue.CompareTo(svalue) > 0)
+            {
+                return tvalue;
+            }
+            throw new Exception("FirstNumber,SecondNumber,ThirdNumber are Same");
+        }
     }
 
 }
