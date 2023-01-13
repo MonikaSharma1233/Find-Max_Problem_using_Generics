@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FindMaximumNumber
+{
+    public class GenericFindMaximum<T> where T : IComparable
+    {
+        public T[] value;
+        //constructor with T datatpe paramenter
+        public GenericFindMaximum(T[] value)
+        {
+            this.value = value;
+        }
+
+
+        public T[] Sorted_values(T[] values)
+        {
+            Array.Sort(values);
+            return values;
+        }
+
+
+        //finding max for given type
+        //params used for optional
+        public T MaxValue(params T[] values)
+        {
+            var sorted_values = Sorted_values(values);
+            return sorted_values[^1];
+        }
+
+
+        //printing  the max genric value
+        public void PrintMaxValue()
+        {
+            var max=MaxValue(this.value);
+            Console.WriteLine("The Maximum value is: " +max);
+        }
+    }
+}
